@@ -1,0 +1,341 @@
+# Sub-Store / Mihomo 配置模板
+# 由原 INI 方案 A 转换
+# 主要保留：应用分组、国家节点组、自动/手动选择、规则顺序
+
+proxy-groups:
+  # =========================
+  # 核心应用
+  # =========================
+  - name: 🤖 ChatGPT
+    type: select
+    proxies:
+      - 🇭🇰 HK
+      - 🇹🇼 TW
+      - 🇯🇵 JP
+      - 🇸🇬 SG
+      - 🇺🇸 US
+      - 🧊 冷门节点
+      - ♻️ 自动选择
+      - 🧭 手动选择
+      - DIRECT
+
+  - name: 🧠 AI
+    type: select
+    proxies:
+      - 🇭🇰 HK
+      - 🇹🇼 TW
+      - 🇯🇵 JP
+      - 🇸🇬 SG
+      - 🇺🇸 US
+      - 🧊 冷门节点
+      - ♻️ 自动选择
+      - 🧭 手动选择
+      - DIRECT
+
+  - name: 📨 Telegram
+    type: select
+    proxies:
+      - 🇭🇰 HK
+      - 🇹🇼 TW
+      - 🇯🇵 JP
+      - 🇸🇬 SG
+      - 🇺🇸 US
+      - 🧊 冷门节点
+      - ♻️ 自动选择
+      - 🧭 手动选择
+      - DIRECT
+
+  - name: 🎬 YouTube
+    type: select
+    proxies:
+      - 🇭🇰 HK
+      - 🇹🇼 TW
+      - 🇯🇵 JP
+      - 🇸🇬 SG
+      - 🇺🇸 US
+      - 🧊 冷门节点
+      - ♻️ 自动选择
+      - 🧭 手动选择
+      - DIRECT
+
+  - name: 🎵 TikTok
+    type: select
+    proxies:
+      - 🇭🇰 HK
+      - 🇹🇼 TW
+      - 🇯🇵 JP
+      - 🇸🇬 SG
+      - 🇺🇸 US
+      - 🧊 冷门节点
+      - ♻️ 自动选择
+      - 🧭 手动选择
+      - DIRECT
+
+  # =========================
+  # 常用服务
+  # =========================
+  - name: 🎥 Netflix
+    type: select
+    proxies:
+      - 🇭🇰 HK
+      - 🇹🇼 TW
+      - 🇯🇵 JP
+      - 🇸🇬 SG
+      - 🇺🇸 US
+      - 🧊 冷门节点
+      - ♻️ 自动选择
+      - 🧭 手动选择
+      - DIRECT
+
+  - name: 🔎 Google
+    type: select
+    proxies:
+      - 🇭🇰 HK
+      - 🇹🇼 TW
+      - 🇯🇵 JP
+      - 🇸🇬 SG
+      - 🇺🇸 US
+      - 🧊 冷门节点
+      - ♻️ 自动选择
+      - 🧭 手动选择
+      - DIRECT
+
+  - name: 🪟 Microsoft
+    type: select
+    proxies:
+      - DIRECT
+      - 🇭🇰 HK
+      - 🇹🇼 TW
+      - 🇯🇵 JP
+      - 🇸🇬 SG
+      - 🇺🇸 US
+      - 🧊 冷门节点
+      - ♻️ 自动选择
+      - 🧭 手动选择
+
+  - name: ☁️ cloudflare
+    type: select
+    proxies:
+      - 🇭🇰 HK
+      - 🇹🇼 TW
+      - 🇯🇵 JP
+      - 🇸🇬 SG
+      - 🇺🇸 US
+      - 🧊 冷门节点
+      - ♻️ 自动选择
+      - 🧭 手动选择
+      - DIRECT
+
+  - name: 🛠 GitHub
+    type: select
+    proxies:
+      - 🇭🇰 HK
+      - 🇹🇼 TW
+      - 🇯🇵 JP
+      - 🇸🇬 SG
+      - 🇺🇸 US
+      - 🧊 冷门节点
+      - ♻️ 自动选择
+      - 🧭 手动选择
+      - DIRECT
+
+  # =========================
+  # 工具 / 游戏
+  # =========================
+  - name: 🚝 测速工具
+    type: select
+    proxies:
+      - DIRECT
+      - ♻️ 自动选择
+      - 🧭 手动选择
+      - 🇭🇰 HK
+      - 🇹🇼 TW
+      - 🇯🇵 JP
+      - 🇸🇬 SG
+      - 🇺🇸 US
+      - 🧊 冷门节点
+
+  - name: 🎮 Steam
+    type: select
+    proxies:
+      - DIRECT
+      - 🇭🇰 HK
+      - 🇹🇼 TW
+      - 🇯🇵 JP
+      - 🇸🇬 SG
+      - 🇺🇸 US
+      - 🧊 冷门节点
+      - ♻️ 自动选择
+      - 🧭 手动选择
+
+  # =========================
+  # Adobe
+  # =========================
+  - name: 🟥 Adobe
+    type: select
+    proxies:
+      - 🇭🇰 HK
+      - 🇹🇼 TW
+      - 🇯🇵 JP
+      - 🇸🇬 SG
+      - 🇺🇸 US
+      - 🧊 冷门节点
+      - ♻️ 自动选择
+      - 🧭 手动选择
+      - DIRECT
+      - REJECT
+
+  # =========================
+  # 漏网之鱼 / 非标端口
+  # =========================
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - DIRECT
+      - ♻️ 自动选择
+      - 🧊 冷门节点
+      - 🧭 手动选择
+      - 🚀 手动选择
+
+  - name: 🔀 非标端口
+    type: select
+    proxies:
+      - 🐟 遵循规则
+      - DIRECT
+
+  - name: 🐟 遵循规则
+    type: select
+    proxies:
+      - 🐟 漏网之鱼
+
+  # =========================
+  # 全节点
+  # =========================
+  - name: 🧭 手动选择
+    type: select
+    include-all: true
+
+  - name: ♻️ 自动选择
+    type: url-test
+    include-all: true
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+
+  # =========================
+  # 国家节点
+  # =========================
+  - name: 🇭🇰 HK
+    type: url-test
+    include-all: true
+    filter: '(?i)(🇭🇰|香港|\bHK\b|hongkong)'
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+
+  - name: 🇹🇼 TW
+    type: url-test
+    include-all: true
+    filter: '(?i)(🇹🇼|台湾|\bTW\b|taiwan|taipei|hinet)'
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+
+  - name: 🇯🇵 JP
+    type: url-test
+    include-all: true
+    filter: '(?i)(🇯🇵|日本|\bJP\b|tokyo|osaka)'
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+
+  - name: 🇸🇬 SG
+    type: url-test
+    include-all: true
+    filter: '(?i)(🇸🇬|新加坡|\bSG\b|singapore)'
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+
+  - name: 🇺🇸 US
+    type: url-test
+    include-all: true
+    filter: '(?i)(🇺🇸|美国|\bUS\b|united states|los angeles|san jose|seattle|new york)'
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+
+  - name: 🧊 冷门节点
+    type: select
+    include-all: true
+    filter: '(?i)^(?!.*(🇭🇰|香港|\bHK\b|hong\s*kong|🇯🇵|日本|\bJP\b|tokyo|osaka|🇹🇼|台湾|\bTW\b|taiwan|taipei|hinet|🇸🇬|新加坡|\bSG\b|singapore|🇺🇸|美国|\bUS\b|united\s*states|los\s*angeles|san\s*jose|seattle|new\s*york)).*'
+
+rule-providers:
+  Custom_Port_Direct:
+    type: http
+    behavior: classical
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Port_Direct.yaml
+    path: ./ruleset/Custom_Port_Direct.yaml
+    interval: 28800
+
+rules:
+  # Adobe
+  - GEOSITE,adobe,🟥 Adobe
+  - GEOIP,adobe,🟥 Adobe,no-resolve
+
+  # 私网直连
+  - GEOSITE,private,DIRECT
+  - GEOIP,private,DIRECT,no-resolve
+
+  # Aethersailor 直连补丁
+  - RULE-SET,Custom_Direct_Domain,DIRECT
+  - RULE-SET,Custom_Direct_Classical_IP,DIRECT
+
+  # Aethersailor 代理补丁
+  - RULE-SET,Custom_Proxy_Domain,🚀 手动选择
+  - RULE-SET,Custom_Proxy_Classical_IP,🚀 手动选择
+
+  # 国内直连
+  - GEOSITE,cn,DIRECT
+  - GEOIP,cn,DIRECT,no-resolve
+
+  # 国内可用 / 下载 / BT
+  - GEOSITE,google-cn,DIRECT
+  - GEOSITE,category-games@cn,DIRECT
+  - GEOSITE,category-game-platforms-download,DIRECT
+  - GEOSITE,category-public-tracker,DIRECT
+
+  # 核心应用
+  - GEOSITE,openai,🤖 ChatGPT
+  - GEOSITE,category-ai-!cn,🧠 AI
+  - GEOSITE,telegram,📨 Telegram
+  - GEOIP,telegram,📨 Telegram,no-resolve
+  - GEOSITE,youtube,🎬 YouTube
+  - GEOSITE,tiktok,🎵 TikTok
+  - GEOIP,tiktok,🎵 TikTok,no-resolve
+
+  # 常用服务
+  - GEOSITE,netflix,🎥 Netflix
+  - GEOIP,netflix,🎥 Netflix,no-resolve
+  - GEOSITE,google,🔎 Google
+  - GEOIP,google,🔎 Google,no-resolve
+  - GEOSITE,microsoft,🪟 Microsoft
+  - GEOIP,microsoft,🪟 Microsoft,no-resolve
+  - GEOSITE,cloudflare,☁️ cloudflare
+  - GEOIP,cloudflare,☁️ cloudflare,no-resolve
+  - GEOSITE,github,🛠 GitHub
+  - GEOIP,github,🛠 GitHub,no-resolve
+
+  # 工具 / 游戏
+  - GEOSITE,category-speedtest,🚝 测速工具
+  - GEOSITE,steam,🎮 Steam
+
+  # GFW 兜底
+  - GEOSITE,gfw,🚀 手动选择
+
+  # 非标端口
+  - RULE-SET,Custom_Port_Direct,🔀 非标端口
+
+  # 最终兜底
+  - MATCH,🐟 漏网之鱼
