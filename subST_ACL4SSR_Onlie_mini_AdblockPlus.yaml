@@ -1,0 +1,207 @@
+# ==========================================================
+# ACL4SSR 在线版 → Mihomo YAML
+# ==========================================================
+
+proxy-groups:
+
+  # ==========================================================
+  # 节点选择
+  # ==========================================================
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - DIRECT
+    include-all: true
+
+  # ==========================================================
+  # 自动测速
+  # ==========================================================
+  - name: ♻️ 自动选择
+    type: url-test
+    include-all: true
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+
+  # ==========================================================
+  # 全球直连
+  # ==========================================================
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+
+  # ==========================================================
+  # 全球拦截
+  # ==========================================================
+  - name: 🛑 全球拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+
+  # ==========================================================
+  # 漏网之鱼
+  # ==========================================================
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - ♻️ 自动选择
+    include-all: true
+
+
+# ==========================================================
+# Rule Providers
+# ==========================================================
+
+rule-providers:
+
+  LocalAreaNetwork:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
+    path: ./ruleset/LocalAreaNetwork.list
+    interval: 86400
+
+  UnBan:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list
+    path: ./ruleset/UnBan.list
+    interval: 86400
+
+  BanAD:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
+    path: ./ruleset/BanAD.list
+    interval: 86400
+
+  BanProgramAD:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
+    path: ./ruleset/BanProgramAD.list
+    interval: 86400
+
+  BanEasyListChina:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyListChina.list
+    path: ./ruleset/BanEasyListChina.list
+    interval: 86400
+
+  GoogleCN:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list
+    path: ./ruleset/GoogleCN.list
+    interval: 86400
+
+  SteamCN:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/SteamCN.list
+    path: ./ruleset/SteamCN.list
+    interval: 86400
+
+  Telegram:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list
+    path: ./ruleset/Telegram.list
+    interval: 86400
+
+  ProxyMedia:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
+    path: ./ruleset/ProxyMedia.list
+    interval: 86400
+
+  ProxyLite:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list
+    path: ./ruleset/ProxyLite.list
+    interval: 86400
+
+  ChinaDomain:
+    type: http
+    behavior: domain
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+    path: ./ruleset/ChinaDomain.list
+    interval: 86400
+
+  ChinaCompanyIp:
+    type: http
+    behavior: ipcidr
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
+    path: ./ruleset/ChinaCompanyIp.list
+    interval: 86400
+
+
+# ==========================================================
+# Rules
+# ==========================================================
+
+rules:
+
+  # 局域网
+  - RULE-SET,LocalAreaNetwork,🎯 全球直连
+
+  # 解禁
+  - RULE-SET,UnBan,🎯 全球直连
+
+  # 广告
+  - RULE-SET,BanAD,🛑 全球拦截
+
+  # 程序广告
+  - RULE-SET,BanProgramAD,🛑 全球拦截
+
+  # EasyList China 广告
+  - RULE-SET,BanEasyListChina,🛑 全球拦截
+
+  # Google CN
+  - RULE-SET,GoogleCN,🎯 全球直连
+
+  # Steam CN
+  - RULE-SET,SteamCN,🎯 全球直连
+
+  # Telegram
+  - RULE-SET,Telegram,🚀 节点选择
+
+  # 国外媒体
+  - RULE-SET,ProxyMedia,🚀 节点选择
+
+  # 国外常用网站
+  - RULE-SET,ProxyLite,🚀 节点选择
+
+  # 中国域名
+  - RULE-SET,ChinaDomain,🎯 全球直连
+
+  # 中国 IP
+  - RULE-SET,ChinaCompanyIp,🎯 全球直连
+
+  # GEOIP CN
+  - GEOIP,CN,🎯 全球直连
+
+  # 最终规则
+  - MATCH,🐟 漏网之鱼
